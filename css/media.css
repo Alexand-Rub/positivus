@@ -21,6 +21,10 @@
         line-height: 60px;
     }
 
+    .hero-image {
+        width: 400px;
+    }
+
     .team-item .person {
         display: block;
     }
@@ -67,6 +71,17 @@
     .header-nav {
         display: none;
     }
+
+    .hero-title {
+        margin-bottom: 20px;
+    }
+    .hero-subtitle {
+        margin-bottom: 20px;
+    }
+    .hero-image {
+        width: 340px;
+    }
+
     .hero-partners {
         justify-content: center;
     }
@@ -173,6 +188,14 @@
         margin-bottom: 0;
     }
 
+    .hero-wrapper {
+        flex-direction: column;
+    }
+    .hero-block {
+        max-width: 100%;
+        text-align: center;
+    }
+
     section,
     .communicate {
         margin-bottom: 100px !important;
@@ -229,7 +252,7 @@
     }
 
     .testimonials-swiper {
-        padding: 30px 0 80px 0;
+        padding: 30px 0 100px 0;
     }
     .testimonials-text {
         padding: 20px;
@@ -245,6 +268,10 @@
     }
     .testimonials-button-next {
         right: 30px;
+    }
+
+    .swiper-pagination {
+        bottom: 43px !important;
     }
 
     .contact-form .options {
@@ -272,6 +299,17 @@
         margin-bottom: 20px;
     }
     .footer-form input {
+        width: 100%;
+    }
+    .footer-form button {
+        font-size: 16px;
+        padding: 21px 0;
+    }
+
+}
+
+@media (max-width: 380px) {
+    .hero-image {
         width: 100%;
     }
 }
