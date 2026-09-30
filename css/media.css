@@ -95,7 +95,7 @@
     }
     
     .contact-block {
-        padding: 20px;
+        padding: 25px 20px;
     }
     .contact-form {
         width: 100%;
@@ -150,6 +150,10 @@
 }
 
 @media (max-width: 720px) {
+    body {
+        padding-top: 20px;
+    }
+    
     .container {
         padding: 0px 20px;
     }
@@ -157,7 +161,20 @@
         font-size: 14px;
     }
 
-    section {
+    .header {
+        margin-bottom: 20px;
+    }
+
+    .logo {
+        width: 150px;
+        height: 25px;
+    }
+    .header-logo {
+        margin-bottom: 0;
+    }
+
+    section,
+    .communicate {
         margin-bottom: 100px !important;
     }
 
@@ -211,8 +228,37 @@
         padding: 0 20px;
     }
 
+    .testimonials-swiper {
+        padding: 30px 0 80px 0;
+    }
     .testimonials-text {
         padding: 20px;
+    }
+    .testimonials-person {
+        padding-left: 25px;
+    }
+    .testimonials-button-prev, .testimonials-button-next {
+        bottom: 33px;
+    }
+    .testimonials-button-prev {
+        left: 30px;
+    }
+    .testimonials-button-next {
+        right: 30px;
+    }
+
+    .contact-form .options {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    .contact-form .options label {
+        font-size: 16px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .contact-block::before {
+        right: -480px;
     }
 
     .footer {
