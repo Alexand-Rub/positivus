@@ -3,6 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
     
     accordions.forEach((el) => {
       el.addEventListener("click", (event) => {
+
+        const self = event.currentTarget;        
+        const control = self.querySelector(".accordion__control");
+        const content = self.querySelector(".accordion__content");
+        
+        self.classList.toggle("open");
+        
+        if (self.classList.contains("open")) {
         accordions.forEach((elem) => {
             elem.classList.remove('open');
         });
@@ -13,16 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
             el.setAttribute("aria-hidden", true);
             el.style.maxHeight = '0px';
         });
-
-        const self = event.currentTarget;
-        const control = self.querySelector(".accordion__control");
-        const content = self.querySelector(".accordion__content");
-        
-        self.classList.add("open");
-        
+        self.classList.toggle("open");
         control.setAttribute("aria-expanded", true);
         content.setAttribute("aria-hidden", false);
         content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+            control.setAttribute("aria-expanded", false);
+            content.setAttribute("aria-hidden", true);
+            content.style.maxHeight = null;
+
+        }
       });
     });
 
@@ -137,6 +145,25 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
         header.classList.remove("scrolled");
         }
+    });
+
+    const burger = document.querySelector(".burger");
+    const headerRight = document.querySelector(".header-nav");
+    const navLinks = document.querySelectorAll(".header-link");
+
+    burger.addEventListener("click", function () {
+        burger.classList.toggle("active");
+        headerRight.classList.toggle("active");
+        document.body.classList.toggle("body-hidden");
+    });
+
+    // close nav on click link
+    navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+        burger.classList.remove("active");
+        headerRight.classList.remove("active");
+        document.body.classList.remove("body-hidden");
+        });
     });
 });
 
